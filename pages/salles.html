@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salles - CampusLink</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu principal</a>
+
+  <header class="entete">
+    <h1>CampusLink</h1>
+
+    <nav aria-label="Navigation principale">
+      <ul class="menu">
+        <li><a href="../index.html">Tableau de bord</a></li>
+        <li><a href="salles.html" aria-current="page">Salles</a></li>
+        <li><a href="equipements.html">Équipements</a></li>
+        <li><a href="incidents.html">Incidents</a></li>
+        <li><a href="declaration.html">Déclarer un incident</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenu" id="contenu">
+    <h2>Salles</h2>
+    <p>Liste des salles du campus et de leur état.</p>
+
+    <section aria-labelledby="titre-liste-salles">
+      <h3 id="titre-liste-salles">Toutes les salles</h3>
+
+      <div class="cartes">
+
+        <article class="carte">
+          <h4>Salle A112</h4>
+          <p><span class="statut statut-cours">Incident en cours</span></p>
+          <dl>
+            <dt>Type</dt>
+            <dd>Salle de cours</dd>
+            <dt>Étage</dt>
+            <dd>1er étage</dd>
+            <dt>Capacité</dt>
+            <dd>30 places</dd>
+          </dl>
+          <a href="declaration.html">Déclarer un incident</a>
+        </article>
+
+        <article class="carte">
+          <h4>Salle B204</h4>
+          <p><span class="statut statut-ouvert">Incident ouvert</span></p>
+          <dl>
+            <dt>Type</dt>
+            <dd>Salle informatique</dd>
+            <dt>Étage</dt>
+            <dd>2e étage</dd>
+            <dt>Capacité</dt>
+            <dd>20 places</dd>
+          </dl>
+          <a href="declaration.html">Déclarer un incident</a>
+        </article>
+
+        <article class="carte">
+          <h4>Salle C001</h4>
+          <p><span class="statut statut-dispo">Disponible</span></p>
+          <dl>
+            <dt>Type</dt>
+            <dd>Amphithéâtre</dd>
+            <dt>Étage</dt>
+            <dd>Rez-de-chaussée</dd>
+            <dt>Capacité</dt>
+            <dd>120 places</dd>
+          </dl>
+          <a href="declaration.html">Déclarer un incident</a>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p>CampusLink - Projet fil rouge Ynov B1</p>
+  </footer>
+
+</body>
+</html>

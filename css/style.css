@@ -1,0 +1,214 @@
+/* ==========================================================
+   CampusLink - feuille de style commune (FR01)
+   Fonctionne avec les pages SANS classes (index de la collègue)
+   et avec les pages AVEC classes (salles.html, etc.)
+   ========================================================== */
+
+/* 1. Variables : couleurs et tailles réutilisables */
+:root {
+  --couleur-principale: #42ab9e;
+  --couleur-fond: #f3f4f6;
+  --couleur-texte: #1f2937;
+  --couleur-blanc: #ffffff;
+  --espace: 1rem;
+}
+
+/* 2. Réglages de base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--couleur-fond);
+  color: var(--couleur-texte);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--couleur-principale);
+}
+
+/* 3. Lien d'évitement (caché, visible au clavier) */
+.lien-evitement {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background-color: var(--couleur-blanc);
+  color: var(--couleur-principale);
+  padding: 0.5rem 1rem;
+}
+
+.lien-evitement:focus {
+  left: 0;
+}
+
+/* 4. En-tête et menu (mobile d'abord) */
+header {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-blanc);
+  padding: var(--espace);
+}
+
+header h1 {
+  margin: 0 0 var(--espace);
+  font-size: 1.5rem;
+}
+
+/* Le menu fonctionne avec des liens directs dans <nav>
+   ou avec une liste <ul> à l'intérieur de <nav> */
+nav,
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem;
+  color: var(--couleur-blanc);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a:focus,
+nav a[aria-current="page"] {
+  background-color: var(--couleur-blanc);
+  color: var(--couleur-principale);
+}
+
+/* 5. Contenu principal et pied de page */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--espace);
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  padding: var(--espace);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* 6. Cartes
+   - tout <article> a l'aspect d'une carte
+   - les cartes d'une même section se placent en grille
+     (1 colonne sur mobile, plus de colonnes si la place le permet) */
+article,
+.carte {
+  background-color: var(--couleur-blanc);
+  padding: var(--espace);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+article h3,
+article h4 {
+  margin: 0 0 0.5rem;
+}
+
+article p {
+  margin: 0 0 0.75rem;
+}
+
+/* Section dont les enfants directs sont des <article> */
+section:has(> article),
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espace);
+}
+
+/* Le titre de la section occupe toute la largeur de la grille */
+section:has(> article) > h2 {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.cartes {
+  margin: var(--espace) 0 2rem;
+}
+
+.chiffre {
+  margin: 0.5rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--couleur-principale);
+}
+
+/* Listes de description dans les cartes (page Salles) */
+.carte dl {
+  margin: 0.75rem 0;
+}
+
+.carte dt {
+  font-weight: bold;
+}
+
+.carte dd {
+  margin: 0 0 0.5rem;
+}
+
+/* 7. Tableau */
+.tableau-conteneur {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--couleur-blanc);
+}
+
+th,
+td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #d1d5db;
+}
+
+th {
+  background-color: var(--couleur-principale);
+  color: var(--couleur-blanc);
+}
+
+/* 8. Étiquettes de statut */
+.statut {
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.statut-ouvert { background-color: #fee2e2; color: #991b1b; }
+.statut-cours  { background-color: #fef3c7; color: #92400e; }
+.statut-resolu,
+.statut-dispo  { background-color: #d1fae5; color: #065f46; }
+
+/* 9. Écran large (desktop) : en-tête et menu en ligne */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header h1 {
+    margin: 0;
+  }
+
+  nav,
+  nav ul {
+    flex-direction: row;
+  }
+}
