@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Déclarer un incident - CampusLink</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu principal</a>
+
+  <header>
+    <h1>CampusLink</h1>
+
+    <nav aria-label="Navigation principale">
+      <a href="../index.html">Tableau de bord</a>
+      <a href="salles.html">Salles</a>
+      <a href="equipements.html">Équipements</a>
+      <a href="incidents.html">Incidents</a>
+      <a href="declaration.html" aria-current="page">Déclarer un incident</a>
+    </nav>
+  </header>
+
+  <main id="contenu">
+
+    <section>
+      <h2>Déclarer un incident</h2>
+      <p>Remplissez ce formulaire pour signaler un problème. Les champs marqués "obligatoire" doivent être remplis.</p>
+
+      <form action="incidents.html" method="get">
+
+        <label for="titre">Titre de l'incident (obligatoire)</label>
+        <input type="text" id="titre" name="titre" placeholder="Ex : Vidéoprojecteur hors service" required>
+
+        <label for="salle">Salle concernée (obligatoire)</label>
+        <select id="salle" name="salle" required>
+          <option value="">-- Choisir une salle --</option>
+          <option value="A112">A112</option>
+          <option value="B204">B204</option>
+          <option value="C001">C001</option>
+        </select>
+
+        <label for="equipement">Équipement concerné</label>
+        <select id="equipement" name="equipement">
+          <option value="">-- Aucun / je ne sais pas --</option>
+          <option value="videoprojecteur">Vidéoprojecteur</option>
+          <option value="ordinateur">Ordinateur</option>
+          <option value="prise">Prise électrique</option>
+          <option value="mobilier">Mobilier</option>
+          <option value="autre">Autre</option>
+        </select>
+
+        <fieldset>
+          <legend>Priorité (obligatoire)</legend>
+          <label><input type="radio" name="priorite" value="faible" required> Faible</label>
+          <label><input type="radio" name="priorite" value="moyenne"> Moyenne</label>
+          <label><input type="radio" name="priorite" value="elevee"> Élevée</label>
+        </fieldset>
+
+        <label for="date">Date de constat</label>
+        <input type="date" id="date" name="date">
+
+        <label for="description">Description (obligatoire)</label>
+        <textarea id="description" name="description" rows="5" aria-describedby="aide-description" required></textarea>
+        <p id="aide-description" class="aide">Expliquez ce qui s'est passé et ce que vous avez déjà essayé.</p>
+
+        <label for="email">Votre adresse e-mail (obligatoire)</label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="prenom.nom@ynov.com" required>
+
+        <button type="submit">Envoyer la déclaration</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 CampusLink</p>
+  </footer>
+
+</body>
+</html>
