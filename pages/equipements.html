@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Équipements - CampusLink</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+  <a class="lien-evitement" href="#contenu">Aller au contenu principal</a>
+
+  <header class="entete">
+    <h1>CampusLink</h1>
+
+    <nav aria-label="Navigation principale">
+      <ul class="menu">
+        <li><a href="../index.html">Tableau de bord</a></li>
+        <li><a href="salles.html">Salles</a></li>
+        <li><a href="equipements.html" aria-current="page">Équipements</a></li>
+        <li><a href="incidents.html">Incidents</a></li>
+        <li><a href="declaration.html">Déclarer un incident</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="contenu" id="contenu">
+
+    <h2>Équipements</h2>
+
+    <p>Liste des équipements présents dans les salles du campus et de leur état.</p>
+
+    <section aria-labelledby="titre-liste-equipements">
+
+      <h3 id="titre-liste-equipements">Tous les équipements</h3>
+
+      <div class="cartes">
+
+        <article class="carte">
+          <h4>Vidéoprojecteur</h4>
+
+          <p><span class="statut statut-cours">En maintenance</span></p>
+
+          <dl>
+            <dt>Salle</dt>
+            <dd>B204</dd>
+
+            <dt>Type</dt>
+            <dd>Vidéoprojecteur</dd>
+
+            <dt>État</dt>
+            <dd>Hors service</dd>
+          </dl>
+
+          <a href="incident-detail.html">Voir l'incident</a>
+        </article>
+
+        <article class="carte">
+          <h4>Ordinateur</h4>
+
+          <p><span class="statut statut-ouvert">Incident ouvert</span></p>
+
+          <dl>
+            <dt>Salle</dt>
+            <dd>A105</dd>
+
+            <dt>Type</dt>
+            <dd>Ordinateur</dd>
+
+            <dt>État</dt>
+            <dd>Ne démarre plus</dd>
+          </dl>
+
+          <a href="incident-detail.html">Voir l'incident</a>
+        </article>
+
+        <article class="carte">
+          <h4>Clavier</h4>
+
+          <p><span class="statut statut-resolu">Fonctionnel</span></p>
+
+          <dl>
+            <dt>Salle</dt>
+            <dd>C302</dd>
+
+            <dt>Type</dt>
+            <dd>Clavier</dd>
+
+            <dt>État</dt>
+            <dd>Fonctionnel</dd>
+          </dl>
+
+          <a href="declaration.html">Déclarer un incident</a>
+        </article>
+
+        <article class="carte">
+          <h4>Connexion réseau</h4>
+
+          <p><span class="statut statut-cours">Incident en cours</span></p>
+
+          <dl>
+            <dt>Salle</dt>
+            <dd>A210</dd>
+
+            <dt>Type</dt>
+            <dd>Réseau</dd>
+
+            <dt>État</dt>
+            <dd>Connexion instable</dd>
+          </dl>
+
+          <a href="incident-detail.html">Voir l'incident</a>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="pied">
+    <p>CampusLink - Projet fil rouge Ynov B1</p>
+  </footer>
+
+</body>
+
+</html>
